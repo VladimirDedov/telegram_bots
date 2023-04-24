@@ -121,7 +121,7 @@ async def process_numbers_answer(message: Message):
 
 @dp.message(lambda x: x.text and x.text.isdigit())
 async def process_numbers_answer(message: Message):
-    if int(message.text) == 333:
+    if int(message.text) in (333, 444):
         await message.answer(' 333? ARE YOU CRAZY?')
 
 # Этот хэндлер будет срабатывать на остальные любые сообщения

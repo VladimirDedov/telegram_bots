@@ -1,17 +1,19 @@
 from random import randint
-
+import os
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command, Text
 from aiogram.types import Message
+from environs import Env
 
-API_TOKEN: str = '6032194699:AAE2uXi34adqOIjYoC99MJTXRUme19cv0E4'
+env = Env()
+env.read_env()
 ATTEMPTS: int = 5
 
 
 # Словарь, в котором будут храниться данные пользователя
 users: dict = {}
 
-bot: Bot = Bot(token=API_TOKEN)
+bot: Bot = Bot(token=env('BOT_TOKEN'))
 dp: Dispatcher = Dispatcher()
 
 
